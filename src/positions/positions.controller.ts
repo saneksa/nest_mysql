@@ -25,21 +25,21 @@ export class PositionsController {
     return this.positionsService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: number) {
-    return this.positionsService.findOne(id);
+  @Get(':uuid')
+  findOne(@Param('uuid') uuid: string) {
+    return this.positionsService.findOne(uuid);
   }
 
-  @Patch(':id')
+  @Patch(':uuid')
   update(
-    @Param('id') id: number,
+    @Param('uuid') uuid: string,
     @Body() updatePositionDto: UpdatePositionDto,
   ) {
-    return this.positionsService.update(id, updatePositionDto);
+    return this.positionsService.update(uuid, updatePositionDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: number) {
-    return this.positionsService.remove(id);
+  @Delete(':uuid')
+  remove(@Param('uuid') uuid: string) {
+    return this.positionsService.remove(uuid);
   }
 }

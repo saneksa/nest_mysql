@@ -19,15 +19,15 @@ export class PositionsService {
     return this.positionRepository.find();
   }
 
-  findOne(id: number) {
-    return this.positionRepository.findOneBy({ id });
+  findOne(uuid: string) {
+    return this.positionRepository.findOneBy({ uuid });
   }
 
-  update(id: number, updatePositionDto: UpdatePositionDto) {
-    return this.positionRepository.update({ id }, updatePositionDto);
+  update(uuid: string, updatePositionDto: UpdatePositionDto) {
+    return this.positionRepository.update({ uuid }, updatePositionDto);
   }
 
-  remove(id: number) {
-    return this.positionRepository.delete({ id });
+  remove(uuid: string) {
+    return this.positionRepository.delete({ uuid });
   }
 }

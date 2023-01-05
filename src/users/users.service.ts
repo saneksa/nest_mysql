@@ -19,19 +19,19 @@ export class UsersService {
     return this.usersRepository.find({ relations: { position: true } });
   }
 
-  findOne(id: number) {
+  findOne(uuid: string) {
     return this.usersRepository.findOneBy({
-      id,
+      uuid,
     });
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return this.usersRepository.update({ id }, updateUserDto);
+  update(uuid: string, updateUserDto: UpdateUserDto) {
+    return this.usersRepository.update({ uuid }, updateUserDto);
   }
 
-  remove(id: number) {
+  remove(uuid: string) {
     return this.usersRepository.delete({
-      id,
+      uuid,
     });
   }
 }
