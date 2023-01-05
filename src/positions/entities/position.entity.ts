@@ -5,6 +5,6 @@ export class Position {
   @PrimaryGeneratedColumn('uuid')
   uuid: string;
 
-  @Column({ type: 'varchar', length: 20 })
+  @Column()
   name: string;
 }
