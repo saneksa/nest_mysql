@@ -18,7 +18,9 @@ export class User {
   @Column()
   age: number;
 
-  @ManyToOne(() => Position)
+  @ManyToOne(() => Position, {
+    onDelete: 'SET NULL',
+  })
   @JoinColumn()
   position: Position;
 }
